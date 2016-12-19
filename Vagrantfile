@@ -9,14 +9,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.cpus = 2
   end
  
-#  config.vm.network "private_network", type: "dhcp"
- 
-#  config.hostmanager.enabled = true
-#  config.hostmanager.ip_resolver = proc do |vm, resolving_vm|
-#    if vm.id
-#      `VBoxManage guestproperty get #{vm.id} "/VirtualBox/GuestInfo/Net/1/V4/IP"`.split()[1]
-#    end
-#  end
 
  (1..3).each do |i| 
     config.vm.define :"kafka#{i}" do |srv|
