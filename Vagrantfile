@@ -6,9 +6,6 @@ ServersCount = 2
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "centos/7"
  
-#  config.vm.provider "virtualbox" do |vb|
-#    vb.cpus = 2
-#  end
   config.vm.synced_folder ".", "/vagrant", type: "nfs"
 
  (1..ServersCount).each do |i| 
@@ -19,16 +16,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
  end
 
-#  config.vm.define :producer1 do |pr|
-#    pr.vm.hostname = "producer1"
-#    pr.vm.network "private_network", ip: "192.168.50.41"
-#    pr.vm.provision "shell", path: "producer.sh"
-#  end
-
-#  config.vm.define :consumer1 do |cn|
-#    cn.vm.hostname = "consumer1"
-#    cn.vm.network "private_network", ip: "192.168.50.51"
-#    cn.vm.provision "shell", path: "consumer.sh"
-#  end  
 
 end
