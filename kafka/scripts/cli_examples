@@ -2,6 +2,9 @@ examples
 
 /opt/kafka/bin/kafka-topics.sh --list --zookeeper kafka1:2181
 /opt/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic kafkatopic --if-not-exists
+/opt/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic kafkatopic --if-not-exists --config delete.retention.ms=10000
 /opt/kafka/bin/kafka-topics.sh --delete --zookeeper localhost:2181 --topic kafkatopic --if-exist
 echo "mseege"  | /opt/kafka/bin/kafka-console-producer.sh --broker-list kafka1:9092 --topic kafkatopic
 /opt/kafka/bin/kafka-console-consumer.sh --zookeeper kafka2:2181 --topic kafkatopic --from-beginning
+/opt/kafka/bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic kafkatopic
+/opt/kafka/bin/kafka-reassign-partitions.sh --zookeeper kafka1:2181 --reassignment-json-file /vagrant/kafka/scripts/increase-replication-factor.json --execute

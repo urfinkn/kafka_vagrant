@@ -1,0 +1,2 @@
+{"version":1,
+ "partitions":[{"topic":"kafkatopic","partition":0,"replicas":[2]}]}
