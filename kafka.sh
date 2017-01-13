@@ -1,3 +1,4 @@
+##test commit from mac
 #!/bin/bash -ex
 echo "server $1"
 if [ ! -f /tmp/yum_installed ]; then
