@@ -12,7 +12,7 @@ echo "delay is $delay, copunt is $count, topic is $topic"
 
 while [ "$i" -le $count ]
 do
-echo "mseege $i"  | /opt/kafka/bin/kafka-console-producer.sh --broker-list kafka1:9092,kafka2:9092 --topic kafkatopic > /dev/null 2>&1
+echo "message $i"  | /opt/kafka/bin/kafka-console-producer.sh --broker-list kafka1:9092,kafka2:9092 --topic kafkatopic > /dev/null 2>&1
 echo "I said - mseege $i"
 ##sleep $delay
 ((i++))
